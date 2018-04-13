@@ -1,0 +1,71 @@
+{% load static %}
+{% load home_tags %}
+
+{% page_head title='Spacommerce | Home :: knymbus'%}
+<body>
+<!--header-->
+{% site_menu %}
+<!--/header-->                  
+<!--banner-->
+<div class="banner">
+    <div class="container">
+        <section class="rw-wrapper">
+            <h1 class="rw-sentence">
+                <span>Comfort &amp; Tranquillity</span>
+                <div class="rw-words rw-words-1">
+					<span>Highest Quality</span>
+                    <span>Top Brands</span>
+                    <span>Best Spa Supplier</span>
+					<span>Love your self again</span>
+					<span>Hot Stones</span>
+					<span>Body Care</span>
+                    
+                </div>
+                <div class="rw-words rw-words-2">
+					<span>In Massage beds & Scented Candles </span>
+                    <span>By the world's top brands</span>
+                    <span>In Jamaica and the Caribbean</span>
+					<span>With our essential oils & blends</span>
+					<span>Choose from our collections</span>
+					<span>Find your ultimate supplies in body care</span>
+                </div>
+            </h1>
+		</section>
+	</div>
+</div>
+	<!--content-->
+		<div class="content">
+			<div class="container">
+                <div class="content-top">
+                    {% show_latest_deals %}
+				</div>
+				<!--products-->
+			<div class="content-mid">
+				<h3>April Sales</h3>
+				{% show_trending_deals %}
+			</div>
+			<!--//products-->
+			<!--brand-->
+			<div class="brand">
+				<!-- <div class="col-md-3 brand-grid">
+					<img src="{% static 'images/ic.png' %}" class="img-responsive" alt="">
+				</div>
+				<div class="col-md-3 brand-grid">
+					<img src="{% static 'images/ic1.png' %}" class="img-responsive" alt="">
+				</div>
+				<div class="col-md-3 brand-grid">
+					<img src="{% static 'images/ic2.png' %}" class="img-responsive" alt="">
+				</div>
+				<div class="col-md-3 brand-grid">
+					<img src="{% static 'images/ic3.png' %}" class="img-responsive" alt="">
+				</div> -->
+				<div class="clearfix"></div>
+			</div>
+			<!--//brand-->
+			</div>
+			
+		</div>
+	<!--//content-->
+	{% page_footer %}
+</body>
+</html>

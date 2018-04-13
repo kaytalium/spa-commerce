@@ -1,0 +1,97 @@
+{% load static %}
+
+<div class="footer">
+    <div class="footer-middle">
+        <div class="container">
+            <div class="col-md-3 footer-middle-in">
+                <a href="/index/">
+                    <img src="{% static 'images/logo1.png' %}" alt="">
+                </a>
+                <p>
+                    Serve with integrity, from high quality spa massage beds, to soothe your stresses away with our hot massage stones which
+                    will heat up when place onto the body. set the scene with a beautiful scented candle that will relax
+                    you with tranquility.
+                </p>
+            </div>
+
+            <div class="col-md-3 footer-middle-in">
+                <h6>Information</h6>
+                <ul class=" in">
+                    <li>
+                        <a href="/404/">About</a>
+                    </li>
+                    <li>
+                        <a href="/contact/">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Returns</a>
+                    </li>
+                    <li>
+                        <a href="/contact/">Site Map</a>
+                    </li>
+                </ul>
+                <ul class="in in1">
+                    <li>
+                        <a href="#">Order History</a>
+                    </li>
+                    <li>
+                        <a href="/wishlist/">Wish List</a>
+                    </li>
+                    <li>
+                        <a href="/login/">Login</a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-3 footer-middle-in">
+
+            </div>
+            <div class="col-md-3 footer-middle-in">
+                <h6>Newsletter</h6>
+                <span>Sign up for News Letter</span>
+                <form>
+                    <input type="text" value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
+                    <input type="submit" value="Subscribe">
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <ul class="footer-bottom-top">
+                <li>
+                    <a href="#">
+                        <img src="{% static 'images/f1.png' %}" class="img-responsive" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'images/f2.png' %}" class="img-responsive" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'images/f3.png' %}" class="img-responsive" alt="">
+                    </a>
+                </li>
+            </ul>
+            <p class="footer-class">&copy; 2018 Serenity Limited. All Rights Reserved </p>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static 'js/simpleCart.min.js' %}"> </script>
+<!-- slide -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!--light-box-files -->
+<script src="{% static 'js/jquery.chocolat.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/chocolat.css' %}" type="text/css" media="screen" charset="utf-8">
+<!--light-box-files -->
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $('a.picture').Chocolat();
+    });
+</script>

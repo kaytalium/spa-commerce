@@ -1,0 +1,10 @@
+{% load static %}
+{% load home_tags %}
+{% load humanize %}
+<label class="line"></label>
+
+<div class="mid-popular">
+    {% for item in items %}
+        {% product_item product=item mdsize=3 gridnum='' %}
+    {% endfor %}
+    </div>

@@ -1,0 +1,7 @@
+<ul>
+    {% for type in types %}
+    <li>
+        <a href="/product/equipment/{{submenu}}?ft={{type.name}}" class="flink">{{type.name}}</a>
+    </li>
+    {% endfor%}
+</ul>

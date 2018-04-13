@@ -1,0 +1,41 @@
+{% load product_tags %}
+<div class="col-md-3 product-bottom filters">
+			<h4>{{subcat|upper}}</h4>	
+        <!--//menu-->
+        <section  class="sky-form">
+                <h4 class="cate">Price</h4>
+                <div class="row row1 scroll-pane">
+                    <div class="col col-4">
+                        {% filter_price menucat=subcat %}
+                    </div>
+                </div>
+            </section> 		
+        <section  class="sky-form">
+            <h4 class="cate">Discounts</h4>
+            <div class="row row1 scroll-pane">
+                <div class="col col-4"> 
+                    {% filter_discount menucat=subcat %}
+                </div>
+            </div>
+        </section> 				 				 
+        
+            
+            <!---->
+            <section  class="sky-form">
+                <h4 class="cate">Type</h4>
+                <div class="row row1 scroll-pane">
+                    <div class="col col-4">
+                        {% filter_type menucat=subcat %}                       
+                    </div>
+                </div>
+        </section>
+            <section  class="sky-form">
+                <h4 class="cate">Brand</h4>
+                <div class="row row1 scroll-pane">
+                   
+                    <div class="col col-4">
+                        {% filter_brand menucat=subcat %}                      
+                    </div>
+                </div>
+            </section>		
+    </div>
