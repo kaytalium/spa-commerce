@@ -1,7 +1,8 @@
 <ul>
     {% for type in types %}
     <li>
-        <a href="/product/equipment/{{submenu}}?ft={{type.name}}" class="flink">{{type.name}}</a>
+        <a href="#" 
+        class="flink types" data-flink='true' data-name="{{type.name}}" data-filter='types'>{{type.name}}</a>
     </li>
     {% endfor%}
 </ul>

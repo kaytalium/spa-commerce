@@ -1,0 +1,6 @@
+{% load product_tags %}
+{% load home_tags %}
+    {% for item in itemlist %} 
+            {% product_item product=item mdsize=4 gridnum=1 %} 
+        {% endfor %}
+        

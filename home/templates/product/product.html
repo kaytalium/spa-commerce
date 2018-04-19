@@ -11,7 +11,7 @@
 	<div class="banner-top" style="background: url(/media/{{submenu.bannerImage}})no-repeat;">
 		<div class="container banner-info">
 			<div class="info">
-					<h1>{{subcategory}}</h1>
+					<h1 class="category" data-crumbs='{"category":"{{category}}","sub":"{{subcategory}}"}'>{{subcategory}}</h1>
 					
 					{% product_type menucat=subcategory %}        
 				</div>
@@ -22,9 +22,11 @@
 	<!--content-->
 	<div class="product">
 		<div class="container">
-			{% product_filters submenu=subcategory %}
+			<div class="filter_breadcrumbs hide"></div>
+			<div class="clearfix"></div>
+			{% product_filters submenu=subcategory maincat=category afilters=activeFilters %}
 			<div class="col-md-9">
-				<div class="mid-popular">
+				<div class="mid-popular item_result_holder">
 					{% for item in itemlist %} {% product_item product=item mdsize=4 gridnum=1 %} {% endfor %}
 					<div class="clearfix"></div>
 				</div>
@@ -35,5 +37,11 @@
 	</div>
 	<!--//content-->
 	{% page_footer %}
+	<script src="{% static 'js/filter.controller.js' %}"> </script>
+	<script>
+			$(document).ready(function () {
+			   $('[data-flink]').flink({csrf:'{{csrf_token}}'})
+			})
+		   </script>
 </body>
 </html>

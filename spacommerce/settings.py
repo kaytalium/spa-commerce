@@ -57,7 +57,12 @@ ROOT_URLCONF = 'spacommerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, "home/templates/product/include"),
+            os.path.join(BASE_DIR, "home/templates/home/include"),
+            os.path.join(BASE_DIR, "home/templates/product"),
+            os.path.join(BASE_DIR, "home/templates/home")
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

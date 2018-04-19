@@ -1,18 +1,9 @@
 <ul>
 {% for price in prices %}
     <li>
-            <a href="#" class="flink">{{price.range}} ({{price.quantity}})</a>
+            <a href="#" class="flink prices" data-flink='true' data-name='{{price.range}}' data-filter="prices">{{price.range}} ({{price.quantity}})</a>
     </li>
 {% endfor%}
 </ul>
-<script>
-    $(function(){
-        $('.price-checkbox-filter').click(function(){
-            $this = $(this)
-            filter = $this.attr('name')
-            // alert($this.attr('name'))
-            $(location).attr('href', 'product/equipment/tables?fp='+filter)
-        })
-    });
-</script>
+
 

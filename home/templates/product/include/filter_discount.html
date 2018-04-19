@@ -3,7 +3,7 @@
             {% for discount in discounts %}
             <li>
             {% if discount.discountrange != 'none'%}
-                <a href="#" class="flink">{{discount.range}} ({{discount.quantity}})</a>
+                <a href="#" class="flink discounts" data-flink='true' data-name="{{discount.range}}" data-filter='discounts'>{{discount.range}} ({{discount.quantity}})</a>
             {% endif %}
         </li>
         {% endfor %}

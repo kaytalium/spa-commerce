@@ -8,5 +8,7 @@ urlpatterns = [
      url(r'^product/(?P<cat>[-\w\s]+)/(?P<subcat>[\w\s]+)/(?P<product>[\w\s]+)/$',views.detail, name='details'),
      url(r'login/$',views.login, name='login'),
      url(r'register/$',views.register, name='register'),
-     url(r'checkout/$',views.checkout, name='checkout')
+     url(r'checkout/$',views.checkout, name='checkout'),
+     url(r'filter_search/$',views.filter_search, name='ajax'),
+
    ]

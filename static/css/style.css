@@ -57,10 +57,11 @@ body a{
     text-decoration: none;  
 }
 
-.filters .flick:active{
+.filters li > a.active{
     color: rgb(241, 97, 97);
     padding-left: 15px;
 }
+
 
  ul{
 	padding: 0;
@@ -70,6 +71,27 @@ h1,h2,h3,h4,h5,h6,label,p{
 	margin:0;	
 }
 /*--header--*/
+.sc-main-menu{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #FFF;
+    z-index: 99999;
+    box-shadow: 1px 1px 1px rgb(202, 200, 200, 0.4)
+}
+
+.filter_breadcrumbs{
+    height: 30px;
+    line-height: 30px;
+    /* box-shadow: 0px 1px 1px #7c7c7c; */
+    font-size: 14px;
+    padding-left: 5px;
+    
+}
+
+.hide{
+    display: none;
+}
 .head{
 	position:relative;
 }
@@ -271,7 +293,7 @@ a.item_add {
     height: 700px;
     display: block;
     background: url(../images/banner1.jpg)no-repeat right top;
-	overflow-x:hidden;
+    overflow-x:hidden;
 }
 .no-cssanimations .rw-wrapper .rw-sentence span:first-child{
 	opacity: 1;
@@ -667,7 +689,8 @@ a.buy-now:hover{
     display: block;
     background: url(../images/massage4-1400x580.jpg)no-repeat ;
     background-size: cover;
-	padding:5em 0;
+    padding:5em 0;
+    margin-top: 116px;
 }
 .banner-top h1{
 	font-size:3em;
