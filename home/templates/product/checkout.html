@@ -1,140 +1,223 @@
-{% load static %}
-{% load home_tags %}
-{% load product_tags %}
-{% page_head title='Registation | register user '%}
+{% load static %} {% load home_tags %} {% load product_tags %} {% page_head title='Registation | register user '%}
+
 <body>
-<!--header-->
-{% site_menu %}
-<!--/header-->
+	<!--header-->
+	{% site_menu %}
+	<!--/header-->
 
-<!--banner-->
-<div class="banner-top">
-	<div class="container">
-		<h1>Checkout</h1>
-		<em></em>
-		<h2><a href="/index/">Home</a><label>/</label>Checkout</h2>
-	</div>
-</div>
-<!--login-->
-	<script>$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});	  
-					});
-			   </script>
-<script>$(document).ready(function(c) {
-					$('.close2').on('click', function(c){
-						$('.cart-header1').fadeOut('slow', function(c){
-							$('.cart-header1').remove();
-						});
-						});	  
-					});
-			   </script>
-			   <script>$(document).ready(function(c) {
-					$('.close3').on('click', function(c){
-						$('.cart-header2').fadeOut('slow', function(c){
-							$('.cart-header2').remove();
-						});
-						});	  
-					});
-			   </script>
-<div class="check-out">
-<div class="container">
-	
-	<div class="bs-example4" data-example-id="simple-responsive-table">
-    <div class="table-responsive">
-    	    <table class="table-heading simpleCart_shelfItem">
-		  <tr>
-			<th class="table-grid">Item</th>
-					
-			<th>Prices</th>
-			<th >Delivery </th>
-			<th>Subtotal</th>
-		  </tr>
-		  <tr class="cart-header">
-
-			<td class="ring-in"><a href="/single/" class="at-in"><img src="{% static 'images/ch.jpg' %}" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close1"> </div></td>
-			<td>$100.00</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			<td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
-		  </tr>
-		  <tr class="cart-header1">
-		  <td class="ring-in"><a href="single.html" class="at-in"><img src="{% static 'images/ch2.jpg' %}" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close2"> </div></td>
-			<td>$100.00</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			<td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
-		  </tr>
-		  <tr class="cart-header2">
-		  <td class="ring-in"><a href="single.html" class="at-in"><img src="{% static 'images/ch1.jpg' %}" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close3"> </div></td>
-			<td>$100.00</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			<td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
-		  </tr>
-		  
-	</table>
-	</div>
-	</div>
-	<div class="produced">
-	<a href="single.html" class="hvr-skew-backward">Produced To Buy</a>
-	 </div>
-</div>
-</div>
-
-<!--//login-->
-<!--brand-->
+	<!--banner-->
+	<div class="banner-top" style="height: 200px;">
 		<div class="container">
-			<div class="brand">
-				<div class="col-md-3 brand-grid">
-					<img src="images/ic.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="images/ic1.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="images/ic2.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="images/ic3.png" class="img-responsive" alt="">
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			</div>
-			<!--//brand-->
-	<!--//content-->
-	
-	<!--//footer-->
-    {% page_footer %}
-    <!--//footer-->
-		
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+			<h1>Checkout</h1>
 
-	<script src="js/simpleCart.min.js"> </script>
-<!-- slide -->
-<script src="js/bootstrap.min.js"></script>
- 
+			<h2>
+				<a href="/index/">Home</a>
+				<label>/</label>Checkout</h2>
+		</div>
+	</div>
+	<!--login-->
+	<script>$(document).ready(function (c) {
+			$('.close1').on('click', function (c) {
+				$('.cart-header').fadeOut('slow', function (c) {
+					$('.cart-header').remove();
+				});
+			});
+		});
+	</script>
+	<script>$(document).ready(function (c) {
+			$('.close2').on('click', function (c) {
+				$('.cart-header1').fadeOut('slow', function (c) {
+					$('.cart-header1').remove();
+				});
+			});
+		});
+	</script>
+	<script>$(document).ready(function (c) {
+			$('.close3').on('click', function (c) {
+				$('.cart-header2').fadeOut('slow', function (c) {
+					$('.cart-header2').remove();
+				});
+			});
+		});
+	</script>
+	<div class="check-out">
+		<div class="container">
+
+			<div class="bs-example4" data-example-id="simple-responsive-table">
+				<div class="table-responsive">
+
+					<table class="table-heading simpleCart_shelfItem itemlist">
+						<tr>
+							<th class="table-grid">Item</th>
+							<th>Prices</th>
+							<th>Quantity</th>
+							<th>Subtotal</th>
+						</tr>
+					</table>
+					<table class="table-heading simpleCart_shelfItem table-total">
+						<tr>
+							<td class="ring-in"></td>
+							<td></td>
+							<td colspan="3" >Subtotal</td>
+							<td></td>
+							<td id="subtotal">$0</td>
+						</tr>
+						<tr>
+							<td class="ring-in"></td>
+							<td></td>
+							<td colspan="3">Tax</td>
+							<td>16.5%</td>
+							<td id="gct">$0</td>
+						</tr>
+						<tr>
+							<td class="ring-in"></td>
+							<td></td>
+							<td colspan="3">Grandtotal</td>
+							<td></td>
+							<td style="color:crimson" id="grandtotal">$0</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="produced">
+				<a href="/shipping/" class="hvr-skew-backward">Continue To Checkout</a>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--//login-->
+
+	<!--//content-->
+
+	<!--//footer-->
+	{% page_footer %}
+	<!--//footer-->
 </body>
+
 </html>
+
+<script>
+	$(document).ready(function () {
+		var items = JSON.parse(localStorage.getItem('simpleCart_items')),
+			td_gct = $('#gct'),
+			td_grandtotal = $("#grandtotal"),
+			td_subtotal = $("#subtotal"),
+			totalqty = 0,
+			subtotal = 0,
+			gct = 0.165,
+			grantotal = 0
+
+		console.log('items: ', items)
+
+		template = (item) => {
+			return `<td class="ring-in">
+								<span class="at-in">
+									<img src="${item.image}" class="img-responsive" alt="">
+								</span>
+								<div class="sed">
+									<h5>
+										${item.name}
+									</h5>
+								</div>
+								<div class="clearfix"> </div>
+							</td>
+							<td>${item.price.formatMoney()}</td>
+							<td id="qty">
+								<div class="quantity">
+                        			<div class="quantity-select">
+                            			<div class="entry value-minus">&nbsp;</div>
+                            				<input type="text" value="${item.quantity}" data-key="${item.id}" id="item_amount" class="entry value item_Quantity">
+                            				<div class="entry value-plus active">&nbsp;</div>
+                        				</div>
+								</div>
+							</td>
+							<td id="tqty" class="item_price">${(item.price * item.quantity).formatMoney()}</td>
+							<td class="add-check">
+								<a class="item_remove hvr-skew-backward" href="#" data-id="${item.id}" >Remove</a>
+							</td>`}
+		Object.keys(items).forEach(key => {
+			$('.itemlist>tbody').append('<tr class="cart-header">' + template(items[key]) + '</tr>')
+			totalqty += parseInt(items[key].quantity, 10)
+			subtotal += parseFloat(items[key].price, 10) * parseInt(items[key].quantity, 10)
+			console.log(totalqty)
+		});
+		
+		$('.item_quantity').html(totalqty)
+			td_subtotal.html(subtotal.formatMoney())
+			gct = subtotal * gct
+			td_gct.html(gct.formatMoney()) 
+			grantotal = gct + subtotal
+			td_grandtotal.html(grantotal.formatMoney())
+
+		$('.value-plus').on('click', function () {
+			var divUpd = $(this).siblings('#item_amount'), newVal = parseInt(divUpd.val(), 10) + 1;
+			divUpd.val(newVal); key = divUpd.data()
+			items[key.key].quantity = newVal
+			localStorage.setItem('simpleCart_items', JSON.stringify(items))
+			newTotal = items[key.key].price * newVal
+			$(this).parent().parent().parent('#qty').siblings('#tqty').html(newTotal.formatMoney())
+			updateCart()
+			console.log()
+		});
+
+		$('.value-minus').on('click', function () {
+			var divUpd = $(this).siblings('#item_amount'), newVal = parseInt(divUpd.val(), 10) - 1;
+			key = divUpd.data()
+			if (newVal >= 1) {
+				divUpd.val(newVal)
+				items[key.key].quantity = newVal
+				localStorage.setItem('simpleCart_items', JSON.stringify(items))
+				newTotal = items[key.key].price * newVal
+				$(this).parent().parent().parent('#qty').siblings('#tqty').html(newTotal.formatMoney())
+				updateCart()
+			};
+
+		});
+
+		$('.item_remove').on('click', function (e) {
+			e.preventDefault()
+			tr = $(this).parent().parent('tr')
+			tr.hide()
+			key = $(this).data()
+			delete items[key.id]
+			localStorage.setItem('simpleCart_items', JSON.stringify(items))
+			updateCart()
+		})
+
+		let updateCart = () => {
+			let totalqty = 0
+			let subtotal = 0
+			let gct = 0.165
+			let grantotal = 0
+
+			Object.keys(items).forEach(key => {
+				totalqty += parseInt(items[key].quantity, 10)
+				subtotal += parseFloat(items[key].price, 10) * parseInt(items[key].quantity, 10)
+				console.log(subtotal)
+			});
+			$('.item_quantity').html(totalqty)
+			td_subtotal.html(subtotal.formatMoney())
+			gct = subtotal * gct
+			td_gct.html(gct.formatMoney()) 
+			grantotal = gct + subtotal
+			td_grandtotal.html(grantotal.formatMoney())
+
+		}
+
+
+	})
+
+	Number.prototype.formatMoney = function (c, d, t, currency) {
+		var n = this,
+			c = isNaN(c = Math.abs(c)) ? 2 : c,
+			d = d == undefined ? "." : d,
+			t = t == undefined ? "," : t,
+			cy = currency == undefined ? " " : currency,
+			s = n < 0 ? "-" : "",
+			i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+			j = (j = i.length) > 3 ? j % 3 : 0;
+		return '$' + s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "") + cy;
+	}
+</script>

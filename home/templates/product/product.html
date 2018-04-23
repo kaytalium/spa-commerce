@@ -1,5 +1,7 @@
 {% load static %} {% load home_tags %} {% load product_tags %} {% page_head title='product|page'%}
 <link href="{% static 'css/form.css' %}" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="{% static 'js/jquery.loadingbar.js' %}"></script>
+<link href="{% static 'css/loadingbar.css' %}" rel="stylesheet" type="text/css" media="all" />
 </head>
 
 <body>
@@ -11,8 +13,7 @@
 	<div class="banner-top" style="background: url(/media/{{submenu.bannerImage}})no-repeat;">
 		<div class="container banner-info">
 			<div class="info">
-					<h1 class="category" data-crumbs='{"category":"{{category}}","sub":"{{subcategory}}"}'>{{subcategory}}</h1>
-					
+					<h1 class="category" data-crumbs='{"category":"{{category}}","sub":"{{subcategory}}"}'>{{subcategory}}</h1>					
 					{% product_type menucat=subcategory %}        
 				</div>
 			</div>
@@ -39,8 +40,8 @@
 	{% page_footer %}
 	<script src="{% static 'js/filter.controller.js' %}"> </script>
 	<script>
-			$(document).ready(function () {
-			   $('[data-flink]').flink({csrf:'{{csrf_token}}'})
+			$(document).ready(function (res) {
+			   $('.flink').flink({csrf:'{{csrf_token}}', subCategory: '{{subcategory}}'})
 			})
 		   </script>
 </body>

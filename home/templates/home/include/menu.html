@@ -116,7 +116,7 @@
             <div class="col-sm-2 search-right">
                 <ul class="heart">
                     <li>
-                        <a href="wishlist.html">
+                        <a href="/wishlist/">
                             <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
                         </a>
                     </li>
@@ -130,7 +130,7 @@
                     <a href="/checkout/">
                         <h3>
                             <div class="total">
-                                <span class="simpleCart_total"></span>
+                                    <span id="simpleCart_quantity" class="simpleCart_quantity item_quantity"></span> 
                             </div>
                             <img src="{% static 'images/cart.png' %}" alt="" />
                         </h3>
@@ -172,7 +172,7 @@
                         });
 
                     });
-                </script> -
+                </script>
             </div>
             <div class="clearfix"></div>
         </div>

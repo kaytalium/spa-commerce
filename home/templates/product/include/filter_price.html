@@ -1,7 +1,7 @@
 <ul>
 {% for price in prices %}
     <li>
-            <a href="#" class="flink prices" data-flink='true' data-name='{{price.range}}' data-filter="prices">{{price.range}} ({{price.quantity}})</a>
+            <a href="/filter_search/" class="flink prices" data-flink='true' data-name='{{price.range}}' data-filter="prices">{{price.range}} ({{price.quantity}})</a>
     </li>
 {% endfor%}
 </ul>

@@ -49,9 +49,10 @@
             <div class="col-md-3 footer-middle-in">
                 <h6>Newsletter</h6>
                 <span>Sign up for News Letter</span>
-                <form>
-                    <input type="text" value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
-                    <input type="submit" value="Subscribe">
+                <form name="newsletterFm">
+                    <input type="text" name="email" id="email" value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
+                    <input type="text" name="csrf" value="{{csrf_token}}" hidden="hidden">
+                    <input type="submit" value="Subscribe" id="btn_newsletter">
                 </form>
             </div>
             <div class="clearfix"> </div>
@@ -95,3 +96,5 @@
         $('a.picture').Chocolat();
     });
 </script>
+
+<script src="{% static 'js/newsletter.js' %}"></script>

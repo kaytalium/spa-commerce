@@ -1,0 +1,153 @@
+{% load static %} {% load home_tags %} {% load product_tags %} {% page_head title='Registation | register user '%}
+
+<body>
+    <!--header-->
+    {% site_menu %}
+    <!--/header-->
+
+    <!--banner-->
+
+    <div class="shipping-banner">
+        <ul>
+            <li class="active">1. Shipping Information</li>
+            <li class="inactive">2. Payment Information</li>
+            <li class="inactive">3. Review and Complete Order</li>
+        </ul>
+    </div>
+    <!--login-->
+    <div class="check-out">
+        <div class="container ">
+
+            <div class="bs-example4" data-example-id="simple-responsive-table">
+                <div class="table-responsive table-response-shipping">
+                    <form action="" id="sippinginfo">
+
+                        <table class="table-shipping">
+                            <tr>
+                                <td>* First name:</td>
+                                <td>* Last name:</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" name="firstname" id="" placeholder="John" required>
+                                </td>
+                                <td>
+                                    <input type="text" name="lastname" id="" placeholder="Doe" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">* Address 1:</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <input type="text" name="address1" id="" placeholder="36 Some street" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Address 2:</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <input type="text" name="address2" id="" placeholder="continue with street name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>* City</td>
+                                <td>* Parish</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" name="city" id="" placeholder="some city" required>
+                                </td>
+                                <td>
+                                    <select name="parih" id="parish" required>
+                                        <option hidden>Parish</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>* Email Address</td>
+                                <td>* Mobile Number</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" name="email" id="" placeholder="johndoe@example.com" required>
+                                </td>
+                                <td>
+                                    <input type="number" name="cellnumber" id="" placeholder="1 (876) 987-1234" required>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <div class="produced">
+                <a href="/payment/" class="hvr-skew-backward" id="continuebtn">Continue to Payment</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--//login-->
+
+    <!--//content-->
+
+    <!--//footer-->
+    {% page_footer %}
+    <!--//footer-->
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+        PARISHES = [
+            'St. Thomas',
+            'St. Andrew',
+            'Kingston',
+            'St. Catherine',
+            'Clarendon',
+            'Manachester',
+            'St. Elizabeth',
+            'Westmoreland',
+            'Hanover',
+            'St. James',
+            'Trelawny',
+            'St. Ann',
+            'St. Mary',
+            'Portland',
+        ]
+        let parish = $('#parish'),
+            btn_continue = $('#continuebtn')
+        PARISHES.forEach(element => {
+            parish.append('<option value="' + element + '">' + element + '</option>')
+        });
+
+        btn_continue.click(function (e) {
+            e.preventDefault()
+            form = $('#sippinginfo').serializeArray()
+
+            required = Array.from($('input,select').filter('[required]:visible'))
+            console.log(required[0].value.length)
+            form.forEach(element => {
+               required.forEach(input => {
+                   if(element.name == input.name && element.value.isEmpty()){
+                       $(input).css({border:"1px solid red"})
+                        return 0
+                    }
+                    if(element.name == input.name && !element.value.isEmpty()){
+                        $(input).css({border: "1px solid green"})
+                        return 0
+                    }
+                   });
+
+            });
+        })
+    })
+
+    String.prototype.isEmpty = function(){
+        return (this.length == 0 ? true: false)
+    }
+</script>

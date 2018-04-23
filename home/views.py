@@ -8,7 +8,8 @@ from django.http.response import JsonResponse
 from re import sub
 from decimal import Decimal
 
-from .models import Categories, Submenu, Item, ItemType, Brand, Discount
+from .models import Categories, Submenu, Item, ItemType, Brand, Discount, Newsletter
+
 # Create your views here.
 subcategories = Submenu.objects.all()
 categories = Categories.objects.all()
@@ -144,23 +145,38 @@ def prepareSearchFilter(value):
 
 def filter_search(request):
     # query criteria from user
-    data = request.POST['filterGroup']
-
-    # create search terms for the itemlist
-    filters = prepareSearchFilter(data)
-
+    category = request.POST['category']
+    # print("This is info from user ajax call: ",category)
     # Due to the fact that no discounted price is stored in the database 
     # We have to create a new object with the list of new discounted prices 
     
     # all items from the database 
-    itemslist = Item.objects.filter(**filters)    
-    # print('Before process: ',itemslist)
-    # for item in itemslist:
-    #     cost  = float(item.price)
-    #     if item.promoitem:
-    #         cost = float(item.price) - (float(item.price)
-    #                                     * item.promopercentage) / 100
-    #         item.price = cost
+    submenu = Submenu.objects.get(name=category)
+
+    # filter all the items that coresponse to the submenu selected
+    productList = Item.objects.filter(submenu=submenu.id) #.values_list('name','price', 'image', 'promopercentage')
+    products = []
+    
+    for item in productList:
+        cost  = float(item.price)
+        if item.promoitem:
+            cost = float(item.price) - (float(item.price)
+                                        * item.promopercentage) / 100
+        i = {'name': item.name,
+             'imageFilename': json.dumps(str(item.image)),
+             'originalPrice': float(item.price),
+             'discountPrice': cost,
+             'promoItem': item.promoitem,
+             'promoPercentage': item.promopercentage,
+             'itemCategory': item.submenu.category.name,
+             'itemSubcategory': item.submenu.name,
+             'discountRange': item.discount.discountrange,
+             'brand': item.brand.name,
+             'productType':item.producttype.name,
+             'itemRatings': item.ratings   }
+        products.append(i)
+    
+    # print(products)
         
     # for item in itemslist:
     #     print("Discount price: ",float(item.price))
@@ -170,15 +186,14 @@ def filter_search(request):
     # print("new List: ",itemslist)
 
     # load template and set the content for template
-    t = loader.get_template('product_result.html')
-    content = {'itemlist': itemslist}
+    # t = loader.get_template('product_result.html')
+    # content = {'itemlist': itemslist}
    
     # setup a variable to return the result to the caller of this api 
     response_data = {}
     try:
         response_data['isResult'] = True
-        response_data['resultCount'] = len(itemslist) 
-        response_data['template'] = t.render(content)
+        response_data['data'] = products
     except:
         response_data['isResult'] = False
         response_data['resultCount'] = 0
@@ -186,4 +201,18 @@ def filter_search(request):
 
     # return HttpResponse(response_data,content_type="application/json")
 
-    
+def newsletter(request):
+    email = request.POST['email']
+    newsletter_instance = Newsletter.objects.create(email=email)
+    response = {}
+    try: 
+        response["msg"] = "email added sucessfully"
+    except:
+        response['msg'] = "unable to add email"
+    return JsonResponse(response)
+
+def wishlist(request):
+     return render(request, 'product/wishlist.html',{})
+
+def shipping(request):
+    return render(request, 'product/shipping.html',{})

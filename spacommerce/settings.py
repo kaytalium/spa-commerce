@@ -53,6 +53,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'spacommerce.urls'
+SESSION_ENGIN = 'django.contrib.sessions.backends.cached_db'
 
 TEMPLATES = [
     {

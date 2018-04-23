@@ -5,7 +5,7 @@
 <div class="col-md-{{md_size}} item-grid{{grid_num }} simpleCart_shelfItem">
         <div class=" mid-pop">
         <div class="pro-img">
-            <img src="/media/{{ item.image }}" class="img-responsive" alt="">
+            <img src="/media/{{ item.image }}" class="img-responsive item_image" alt="">
             <div class="zoom-icon ">
             <a class="picture" href="/media/{{ item.image }}" rel="title" class="b-link-stripe b-animate-go  thickbox">
                 <i class="glyphicon glyphicon-search icon "></i>
@@ -17,7 +17,7 @@
             <div class="women">
             <div class="women-top">
                 <span>{{item.submenu.category.name}}</span>
-                <h6><a href="{{item.name|ampersand}}">{{item.name}}</a></h6>
+                <h6><a href="{{item.name|ampersand}}" class="item_name">{{item.name}}</a></h6>
                 </div>
                 <div class="img item_add">
                     <a href="#"><img src="{% static 'images/ca.png' %}" alt=""></a>
@@ -35,22 +35,14 @@
                     </p>
                     <br>
                       <div class="block">
+                            <div class="starbox small ghosting" > </div>
                     </div>
                     
                     <div class="clearfix"></div>
                 </div>
-                
+               
             </div>
         </div>
         </div>
 
-        <script>
-            simpleCart({
-	checkout: { 
-		type: "PayPal" , 
-		email: "kayheslop@gmail.com" 
-	},
-	tax: 		0.075,
-	currency: 	"EUR"
-});
-        </script>
+        
